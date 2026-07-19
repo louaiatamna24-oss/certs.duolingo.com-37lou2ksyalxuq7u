@@ -27,6 +27,7 @@
 
   .backdrop{
     min-height:100vh;
+    min-height:100dvh;
     width:100%;
     display:flex;
     align-items:center;
@@ -41,6 +42,7 @@
   .card{
     width:100%;
     height:100vh;
+    height:100dvh;
     max-width:none;
     background:var(--paper);
     border-radius:0;
@@ -312,14 +314,46 @@
   .footnote strong{ color:var(--dark-navy); }
 
   @media (max-width:640px){
-    .card-inner{ padding:30px 22px 28px; }
-    .identity{ flex-direction:column; }
-    .cert-meta{ text-align:left; }
+    .card{ align-items:flex-start; }
+    .card-inner{ padding:26px 18px 32px; max-width:100%; }
+
+    .top-row{ padding-bottom:20px; gap:10px; }
+    .brand-lockup{ height:20px; }
+    .official-tag{ font-size:9.5px; padding-top:3px; }
+
+    .identity{ flex-direction:column; gap:14px; padding:22px 0 24px; }
+    .photo{ width:76px; height:76px; border-radius:12px; }
+    .name{ font-size:18px; margin-bottom:8px; }
+    .meta-line{ font-size:12.5px; }
+    .id-text{ gap:14px; }
+    .cert-meta{ text-align:left; min-width:0; }
     .cert-meta .meta-line{ text-align:left; }
-    .grid4{ grid-template-columns:repeat(2,1fr); }
+
+    .overall-heading{ font-size:18px; margin:26px 0 12px; }
+    .overall{ flex-direction:column; border-radius:16px; }
+    .gauge-box{ flex:none; width:100%; padding:22px 10px 18px; }
+    .gauge-wrap, .gauge-wrap svg{ width:170px; height:135px; }
+    .gauge-range{ width:170px; }
+    .gauge-number{ font-size:38px; }
+    .advanced-box{ border-left:none; border-top:1px solid var(--line); padding:20px 18px; }
+    .advanced-title{ font-size:15.5px; }
+    .adv-list li{ font-size:13px; }
+
+    .section-label{ font-size:11px; margin:26px 0 12px; }
+    .grid4{ grid-template-columns:repeat(2,1fr); border-radius:12px; }
+    .grid-cell{ padding:16px 8px 18px; }
     .grid-cell:nth-child(3){ border-left:none; }
     .grid-cell:nth-child(1),.grid-cell:nth-child(2){ border-bottom:1px solid var(--line); }
-    .overall{ flex-direction:column; }
-    .gauge-box{ flex:none; width:100%; }
-    .advanced-box{ border-left:none; border-top:1px solid var(--line); }
+    .grid-num{ font-size:22px; }
+    .grid-label{ font-size:10.5px; }
+    .grid-sub{ font-size:10.5px; }
+
+    .footnote{ font-size:11px; margin-top:24px; padding-top:18px; }
+  }
+
+  @media (max-width:380px){
+    .id-text{ flex-direction:column; }
+    .gauge-wrap, .gauge-wrap svg{ width:150px; height:120px; }
+    .gauge-range{ width:150px; }
+    .gauge-number{ font-size:34px; }
   }
